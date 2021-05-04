@@ -13,9 +13,11 @@ let ran = document.querySelector("#random-recipe");
 let data;
 let tag;
 
+// API connection for random and search
 const apiurl = `https:www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
 const randomRecipe = `https://www.themealdb.com/api/json/v1/1/random.php`;
 
+// Content in async function
 async function getapi(url) {
     const response = await fetch(url);
 
@@ -34,23 +36,7 @@ async function getapi(url) {
     console.log(youtube);
 
     let table = "";  
-    
-    /* ingred = [];
-    console.log(ingredients);
-    let measure = data.meals[0].strMeasure;
-    console.log(measure);
 
-    const ingredients = ing => {
-        let regex = /strIngredient[0-9]+/;
-        return regex.test(ing);
-    }
-
-    data.meals[0].forEach(element => {
-        if (element == ingredients) {
-            ingred.push(element);
-        }
-
-    }); */
 
     tag = 
         `<div class="recipe">
@@ -71,30 +57,3 @@ document.querySelector("#random-recipe").addEventListener('click', getapi(random
 
 
     
-
-
-
-/* function hideloader() {
-    document.querySelector("#")
-} */
-
-/* function show(data) {
-    let tab = 
-        `<tr>
-            <th>Name</th>
-            <th>Office</th>
-            <th>Position</th>
-            <th>Salary</th>
-        </tr>`;
-
-    for (let r of data.list) {
-        tab += `<tr>
-        <td>${r.name} </td>
-        <td>${r.office}</td>
-        <td>${r.position}</td> 
-        <td>${r.salary}</td>
-        </tr>`
-    }
-
-    document.querySelector("#").innerHTML = tab;
-} */
